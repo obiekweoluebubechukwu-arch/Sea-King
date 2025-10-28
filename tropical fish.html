@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tropical Fishes — Everything About Them</title>
+  <style>
+    body {font-family: Arial, sans-serif; background: #0f1724; color: #e6eef6; margin: 0; line-height: 1.6;}
+    header, nav, footer {background: #0b1220; padding: 20px; text-align: center;}
+    nav a {color: #94a3b8; margin: 0 10px; text-decoration: none;}
+    nav a:hover {color: #19a7ce;}
+    main {padding: 20px; max-width: 1100px; margin: auto;}
+    h1, h2 {text-align: center; color: #19a7ce;}
+
+    .gallery {display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; margin-top: 20px;}
+    figure {margin: 0; background: #0b1220; padding: 10px; border-radius: 10px; overflow: hidden; cursor: pointer; transition: transform 0.3s, box-shadow 0.3s;}
+    figure:hover {transform: scale(1.05); box-shadow: 0 10px 20px rgba(25,167,206,0.4);}
+    figure img {width: 100%; border-radius: 8px; display: block;}
+    figure figcaption {font-size: 14px; color: #94a3b8; margin-top: 5px; text-align: center;}
+
+    .lightbox {position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); display: flex; justify-content: center; align-items: center; visibility: hidden; opacity: 0; transition: opacity 0.3s; z-index: 1000;}
+    .lightbox img {max-width: 90%; max-height: 80%; border-radius: 10px;}
+    .lightbox.visible {visibility: visible; opacity: 1;}
+
+    .card {background: #0b1220; padding: 15px; border-radius: 10px; margin-top: 15px;}
+    footer p {font-size: 14px; color: #94a3b8;}
+    ul {padding-left: 20px;}
+
+    /* Animated training illustration */
+    .training {margin-top: 30px; display: flex; justify-content: center;}
+    .tank {position: relative; width: 300px; height: 150px; background: #06202b; border: 2px solid #19a7ce; border-radius: 12px; overflow: hidden;}
+    .hoop {position: absolute; top: 50px; left: 220px; width: 40px; height: 40px; border: 3px solid #facc15; border-radius: 50%;}
+    .fish {position: absolute; top: 70px; left: 20px; width: 30px; height: 15px; background: #f87171; border-radius: 50%; animation: swim 4s infinite ease-in-out;}
+
+    @keyframes swim {
+      0% {left: 20px; transform: rotate(0deg);}
+      50% {left: 210px; transform: rotate(360deg);}
+      100% {left: 20px; transform: rotate(0deg);}
+    }
+
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Tropical Fishes</h1>
+    <p>Learn everything about tropical fish and how they can be trained</p>
+  </header>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="anatomy.html">Anatomy</a>
+    <a href="types.html">Types</a>
+    <a href="habitats.html">Habitats</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="conservation.html">Conservation</a>
+  </nav>
+  <main>
+    <section>
+      <h2>Introduction to Tropical Fishes</h2>
+      <p>Tropical fishes are a diverse group of colorful freshwater and saltwater species that thrive in warm, tropical environments. They are popular in aquariums due to their vivid colors, behaviors, and relatively small size.</p>
+    </section>
+
+    <section>
+      <h2>Types of Tropical Fish</h2>
+      <div class="gallery">
+        <figure><img src="image/clownfish with anomia.png" alt="Clownfish" height="300" width="200" target="parent"><figcaption>Clownfish — famous for their symbiosis with sea anemones.</figcaption></figure>
+        <figure><img src="image/Angelfish.png" alt="Angelfish" height="300" width="200" target="parent"><figcaption>Angelfish — elegant freshwater tropical fish.</figcaption></figure>
+        <figure><img src="image/Guppy.png" alt="Guppy" height="300" width="200" target="parent"><figcaption>Guppy — small, active, and easy to care for in aquariums.</figcaption></figure>
+      </div>
+    </section>
+
+    <section>
+      <h2>Habitat and Care</h2>
+      <p>Tropical fish require warm water (24–28°C / 75–82°F), clean water, plants, and hiding spots. Proper filtration, regular water changes, and monitoring pH, hardness, and nitrate levels are essential for their health.</p>
+    </section>
+
+    <section>
+      <h2>Training and Interaction</h2>
+      <p>Many tropical fishes can be trained using positive reinforcement:</p>
+      <ul>
+        <li><strong>Target Training:</strong> Encourage fish to swim to a stick or pointer, rewarding with food.</li>
+        <li><strong>Feeding on Cue:</strong> Feed fish at the same spot or time to teach them to respond to visual cues.</li>
+        <li><strong>Tricks:</strong> With patience, fish can jump through hoops or follow simple patterns.</li>
+        <li><strong>Consistency:</strong> Short daily sessions are more effective than long, irregular periods.</li>
+      </ul>
+      <div class="training">
+        <div class="tank">
+          <div class="hoop"></div>
+          <div class="fish"></div>
+        </div>
+      </div>
+      <p style="text-align:center;color:#94a3b8; margin-top:8px;">Animated illustration: The fish swims through the hoop as an example of training.</p>
+    </section>
+
+    <section>
+      <h2>Fun Facts</h2>
+      <ul>
+        <li>Some tropical fish, like the Betta, recognize their owners.</li>
+        <li>Colorful patterns serve for communication and camouflage.</li>
+        <li>Schools of tropical fish often display coordinated swimming behavior.</li>
+      </ul>
+    </section>
+  </main>
+
+  <div class="lightbox" id="lightbox"><img src="" alt="Enlarged fish image"></div>
+
+  <footer>
+    <p>&copy; 2025 Everything About Fishes. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const figures = document.querySelectorAll('figure');
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = lightbox.querySelector('img');
+
+    figures.forEach(fig => {
+      fig.addEventListener('click', () => {
+        lightboxImg.src = fig.querySelector('img').src;
+        lightbox.classList.add('visible');
+      });
+    });
+
+    lightbox.addEventListener('click', () => {
+      lightbox.classList.remove('visible');
+      lightboxImg.src = '';
+    });
+  </script>
+</body>
+</html>
